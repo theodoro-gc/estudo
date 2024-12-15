@@ -1,0 +1,5 @@
+numeros = str(input('digite um numero'))
+partes = numeros.split(',')
+reverso = partes.sort(reverse=True)
+print(partes)
+print('os numeros digitado no inverso sao assim {}'.format(reverso))

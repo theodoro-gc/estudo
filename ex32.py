@@ -1,0 +1,5 @@
+numeros = str(input('digite alguns numeros'))
+partes = numeros.split(',')
+ucoloide = partes.sort(revarse = True)
+print('os numeros digiteados no inversso ficam assim'.format(ucoloide))
+print(partes)

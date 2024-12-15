@@ -1,0 +1,5 @@
+numeros = str(input('digite alguns numeros'))
+partes = numeros.split(',')
+soma = sum(numeros)
+media = soma / len(numeros)
+print('A média dos números é:'.format(media))
