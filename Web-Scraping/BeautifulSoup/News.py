@@ -1,15 +1,21 @@
 import requests
 from bs4 import BeautifulSoup
 
-responce = requests.get('https://g1.globo.com/')   
+response = requests.get('https://g1.globo.com/')
 
-content = responce.content
+content = response.content
 
 site = BeautifulSoup(content, 'html.parser')
 
-post = site.find('div', attrs={'class': 'feed-post-body'})
+# HTML da notícia
+noticia = site.find('div', attrs={'class': 'feed-post-body'})
 
-
-titulo = post.find('a', attrs={'class': 'feed-post-link'})
+# Título
+titulo = noticia.find('a', attrs={'class': 'feed-post-link'})
 
 print(titulo.text)
+
+# Subtítulo: div class="feed-post-body-resumo"
+subtitulo = noticia.find('div', attrs={'class': 'feed-post-body-resumo'})
+
+print(subtitulo.text)
